@@ -28,7 +28,7 @@ class Reactor
   end
 
   def turn_on
-    @on = true if @dilithium_crystals < 0
+    @on = true if @dilithium_crystals > 0
   end
 
   def turn_off
@@ -45,7 +45,7 @@ class Reactor
 
   def heat_items_in_core
     @core.contents.each do |item|
-      item.temperature += 1 if draw_power
+      item.temperature += 1 if draw_power(500)
     end
   end
 

@@ -9,10 +9,12 @@ class Pantry
 
   def stock_shelf
     Ingredient.names.each do |ingredient_name|
+      if ingredient_name != "Trakian Ale"
       3.times do
-        @shelf.contents << Ingredient.new('Fur Balls')
+        @shelf.contents << Ingredient.new(ingredient_name)
       end
     end
+   end
   end
 
   def find_ingredient(name)

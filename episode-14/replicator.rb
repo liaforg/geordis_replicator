@@ -19,6 +19,7 @@ class Replicator
     retrieve_glass
     transport_ingredients_to_glass
     mix
+    adjust_temperature
     transport_glass_to_replicator_plate
   end
 
@@ -27,7 +28,7 @@ class Replicator
   end
 
   def glass_in_tummy
-    @tummy.contents.first
+    @tummy.contents.last
   end
 
   def transport_ingredients_to_glass

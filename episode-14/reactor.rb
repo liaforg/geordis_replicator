@@ -24,7 +24,7 @@ class Reactor
 
   def drain_power
     @dilithium_crystals -= 1 if on?
-    turn_off if @dilithium_crystals < 100
+    turn_off if @dilithium_crystals == 0
   end
 
   def turn_on
@@ -36,7 +36,7 @@ class Reactor
   end
 
   def on?
-    !@on
+    @on
   end
 
   def off?
@@ -45,7 +45,7 @@ class Reactor
 
   def heat_items_in_core
     @core.contents.each do |item|
-      item.temperature += 1 if draw_power
+      item.temperature += 1 if draw_power(500)
     end
   end
 

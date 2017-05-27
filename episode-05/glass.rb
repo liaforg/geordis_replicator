@@ -1,12 +1,12 @@
 class Glass
 
-  LUKE_WARM = 37
+  MILD = 50
 
   attr_accessor :inside, :temperature, :errors
 
   def initialize
     @inside      = Location.new
-    @temperature = LUKE_WARM
+    @temperature = MILD
     @errors      = []
   end
 

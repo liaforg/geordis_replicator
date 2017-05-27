@@ -28,7 +28,7 @@ class Replicator
   end
 
   def glass_in_tummy
-    @tummy.contents.first
+    @tummy.contents.last
   end
 
   def transport_ingredients_to_glass

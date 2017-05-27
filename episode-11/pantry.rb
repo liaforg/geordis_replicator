@@ -9,14 +9,16 @@ class Pantry
 
   def stock_shelf
     Ingredient.names.each do |ingredient_name|
+      if ingredient_name != "Altair Water"
       3.times do
         @shelf.contents << Ingredient.new(ingredient_name)
       end
     end
   end
+  end
 
   def find_ingredient(name)
-    'grease'
+    @shelf.contents.find { |item| item.name == name }
   end
 
 end
